@@ -20,10 +20,17 @@ class App extends React.Component<{}, MyState> {
   }
 
   render() {
+    const videoSource = "https://thv1.uloz.to/4/0/8/4080f50d6833b7a99279c7aa14fd3148.720.mp4?fs=VWsXYD8ZuOr0&fide=2zNcTwf&vt=1603839599&sg=sSoyE_LG-7Ltyyze6LeeyQ&bl=";
     return (
       <div className='App'>
-        <h1>COVID-19 TRACKER</h1>
-        <ListTotal data={this.state.data}/>
+        <video autoPlay loop muted id='myVideo'>
+          <source src={videoSource} type='video/mp4' />
+          Your browser does not support the video tag.
+        </video>
+        <div className='content'>
+          <h1>COVID-19 TRACKER</h1>
+          <ListTotal data={this.state.data} />
+        </div>
       </div>
     );
   }
